@@ -26,6 +26,49 @@ Feel free to use this as you wish; just give a link to this repo or credit me. I
 4) Run the **build.sh** file.
 5) Assuming nothing went wrong, your p8 file should be written to and is ready to be run in the pico8 application.
 
+## Code Example
+```lua
+-- main.lua
+#include src/data.lua
+
+function _init()
+    setup_game_states()
+end
+
+function _draw()
+    draw_game_loop()
+end
+
+function _update()
+    update_game_loop()
+end
+
+-- misc functions
+#include src/fileA.lua
+#include src/fileB.lua
+```
+```lua
+--- fileA.lua
+function draw_game_loop()
+    -- code
+end
+```
+```lua
+--- fileB.lua
+function update_game_loop()
+    -- code
+end
+```
+```lua
+--- data.lua
+local global_table_str --[[remove]]
+--[[json global_table_str data.json]]
+
+function setup_game_states()
+    global_table = unpack_table(global_table_str)
+end
+```
+
 # Features
 ## Including seperate lua files
 - This program should be able to link your lua files into a single pico8 file by using lua's basic `#include` keyword. 
