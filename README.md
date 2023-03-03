@@ -2,6 +2,10 @@
 This is a basic plug and play library to "compile" a bunch of lua files to be written into a p8 (pico8) file.
 Feel free to use this as you wish; just give a link to this repo or credit me. It's very crude method of doing this but it's pet project and should at least help with organization. 
 
+## Known Bugs
+- Any strings that is stored in a JSON file can't contain commas if using the provided deserialization file
+- Can't nest lists within a list in JSON file if using the provided deserialization file
+
 # Instructions/Setup
 1) Create a similar working directory for your project.
 ```
